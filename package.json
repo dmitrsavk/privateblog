@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "nodemailer": "^4.6.4",
+    "path": "^0.12.7",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && ./node_modules/.bin/gulp static",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
