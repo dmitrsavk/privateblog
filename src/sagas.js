@@ -1,12 +1,5 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { watchAuth } from './state/auth/saga';
 
-function* test() {
-  console.log('saga');
-  yield put({type: 'lol'})
+export default function* rootSaga() {
+  yield watchAuth();
 }
-
-function* rootSaga() {
-  yield takeLatest('auth/login', test);
-}
-
-export default rootSaga;
