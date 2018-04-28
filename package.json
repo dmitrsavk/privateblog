@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-s": "HTTPS=true npm start",
     "build": "react-scripts build && ./node_modules/.bin/gulp static",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
