@@ -1,7 +1,7 @@
 import { spawn } from 'redux-saga/effects';
 
-import { watchUser } from './state/user/saga';
+import { watchAll } from './state/user/saga';
 
 export default function* rootSaga() {
-  yield spawn(watchUser);
+  yield spawn(watchAll);
 }
