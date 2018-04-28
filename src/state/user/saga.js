@@ -1,11 +1,9 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-const fetchUser = () => fetch('https://privateblog.ru/api/user', { credentials: 'include' });
+const fetchUser = () => fetch('https://privateblog.ru/api/user', { credentials: 'include' }).then(res => res.json());
 
 function* getUserInfo() {
-  console.log('start')
   const user = yield call(fetchUser);
-  console.log(user)
   yield put({ type: 'user/getUserInfoSuccess', data: user});
 }
 

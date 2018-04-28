@@ -3,14 +3,14 @@ const getUserInfo = data => ({
   payload: data
 });
 
-const userReducer = (user = { state: 'initial', data: {}}, action) => {
+const userReducer = (user = { state: 'initial', data: {} }, action) => {
   switch (action.type) {
     case 'user/getUserInfo':
-      return { state: 'pending' };
+      return {...user, state: 'pending'};
     case 'user/getUserInfoSuccess':
-      return { state: 'success', data: user }
+      return { state: 'success', data: action.data }
     default:
-      return {};
+      return user;
   }
 }
 
