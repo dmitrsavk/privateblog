@@ -8,14 +8,14 @@ export const logout = data => ({
   payload: data
 });
 
-const userReducer = (user = { state: "initial", data: {} }, action) => {
+const userReducer = (user = { status: "initial", data: {} }, action) => {
   switch (action.type) {
     case "user/getUserInfo":
-      return { ...user, state: "pending" };
+      return { ...user, status: "pending" };
     case "user/getUserInfoSuccess":
-      return { state: "success", data: action.data };
+      return { status: "success", data: action.data };
     case "user/logout":
-      return { state: "initial", data: {} };
+      return { status: "initial", data: {} };
     default:
       return user;
   }
