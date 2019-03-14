@@ -1,6 +1,6 @@
 import { put, takeLatest, call, spawn } from "redux-saga/effects";
 
-import { routerActions } from 'react-router-redux';
+// import { routerActions } from 'react-router-redux';
 
 const fetchUser = () =>
   fetch("https://privateblog.ru/api/user", { credentials: "include" }).then(
@@ -14,13 +14,12 @@ const logout = () =>
 
 function* getUserInfo() {
   const user = yield call(fetchUser);
-  console.log(user);
   yield put({ type: "user/getUserInfoSuccess", data: user });
 }
 
 function* logoutUser() {
   yield call(logout);
-  yield put(routerActions.push("/"));
+  yield put({ type: "user/logoutSuccess", data: {} });
 }
 
 function* watchUserGetInfo() {
